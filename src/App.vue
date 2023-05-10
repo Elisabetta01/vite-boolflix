@@ -2,6 +2,7 @@
 
   import axios from 'axios';
   import NavComp from './components/NavComp.vue';
+  import MainComp from './components/MainComp.vue';
   import { store } from './store';
 
 
@@ -9,6 +10,7 @@
     name: "App",
     components: {
       NavComp,
+      MainComp,
     },
 
     data(){
@@ -32,6 +34,7 @@
 
 <template>
   <NavComp @chiamataApi="cercaFilm()"/>
+  <MainComp/>
 </template>
 
 <style lang="scss">
