@@ -27,6 +27,12 @@
           store.arrayFilm = res.data.results
         })
 
+        axios.get(`https://api.themoviedb.org/3/search/tv?api_key=${store.apiKey}&language=it_IT&query=${store.testoCerca}`)
+        .then((res)=>{
+          console.log(res.data.results)
+          store.arraySerietv = res.data.results
+        })
+
       }
     }
   }
