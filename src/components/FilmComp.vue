@@ -30,9 +30,9 @@
 
 <template>
      <div>
-          <div class="card">
+          <div class="card position-relative">
                <img :src="`https://image.tmdb.org/t/p/w500${propsFilm.poster_path}`" class="card-img-top" alt="">
-               <div class="card-body">
+               <div class="card-body info">
                     <h5 class="card-title">{{ propsFilm.title }}</h5>
                     <img :src="`https://flagsapi.com/${flag()}/flat/64.png`" class="bandiera">
                     <div>
@@ -49,11 +49,27 @@
           .card{
                width: 200px;
                margin: 10px;
-               .bandiera{
-                    width: 20px;
+               &:hover{
+                    min-width: 300px;
+               }    
+               .info{
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    right: 0;
+                    bottom: 0;
+                    opacity: 0;
+               &:hover{
+                    background-color: rgba(0, 0, 0, 0.6);
+                    color: white;
+                    opacity: 1;
                }
-               .stelline-piene{
-                    color: yellow;
+                    .bandiera{
+                         width: 20px;
+                    }
+                    .stelline-piene{
+                         color: yellow;
+                    }
                }
           }
      }
